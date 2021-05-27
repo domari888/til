@@ -43,8 +43,14 @@ rails g devise:i18n:views
 ```ruby
 rails g devise:views
 ```
-### ログインしていないときにトップページにリダイレクトさせる
-- コントローラの一番上に追記( index をトップページとしています )
+### ログインしていないときにログインページにリダイレクトさせる
+- `app/controllers/application_controller.rb`の一番上に追記
+```ruby
+class ApplicationController < ActionController::Base
+  before_action :authenticate_user!
+end
+```
+- 指定したページのリダイレクトを除外( index のページを除外しています )
 ```ruby
 before_action :authenticate_user!, except: :index
 ```
