@@ -44,7 +44,7 @@ rails g devise:i18n:views
 rails g devise:views
 ```
 ### ログインしていないときにトップページにリダイレクトさせる
-- コントローラの一番上に追記( トップページは　index としています )
+- コントローラの一番上に追記( index をトップページとしています )
 ```ruby
 before_action :authenticate_user!, except: :index
 ```
