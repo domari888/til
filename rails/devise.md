@@ -77,6 +77,15 @@ class ApplicationController < ActionController::Base
 end
 
 ```
-
-
-
+### ユーザーがログインしているかどうかを真偽値で返す
+```ruby
+user_signed_in?
+```
+- ログインしている時、していない時で処理を分ける
+```ruby
+if user_signed_in?
+ # true の処理
+else
+ # false の処理
+end
+```
