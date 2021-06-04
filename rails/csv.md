@@ -41,7 +41,7 @@ end
 - `row[:列の情報]`　
   - csvデータの列の情報を指定して読み込む
   
-- CSV ファイルのカラム名と、テーブルのカラム名が同じ場合
+### CSV ファイルのカラム名と、テーブルのカラム名が同じ場合
 ```ruby
 require "csv"
 
@@ -73,3 +73,27 @@ require "import_csv"
 ImportCsv.import('db/csv_data/user_data.csv')
 ```
   
+### 配列に格納するして実行する場合
+```ruby
+require "csv"
+
+class IMportCsv
+  def self.import(path)
+    list = []
+    CSV.foreach(path, hesders: true) do |row|
+      list << row.to_h
+    end
+    list
+  end
+
+  def self.user_data
+    list = import('db/csv_data/user_data.csv')
+    User > create!(list)
+  end
+end
+```
+- 実行
+```ruby
+require "import_csv"
+ImportCsv.user_data
+```
