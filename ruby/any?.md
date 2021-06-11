@@ -24,7 +24,6 @@ numbers.any?
  #=> false
  ```
  ```ruby
- ```ruby
  numvers = [""]
 
 numbers.any?
