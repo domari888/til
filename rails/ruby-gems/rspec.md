@@ -32,3 +32,16 @@ rails g rspec:install
 # 出力結果を色分けする
 --color
 ```
+
+### 備考
+- テストを書く際にあると便利な gem 
+
+```rb
+# モデルに関するテストデータ作成用
+  gem 'factory_bot_rails'
+# ダミーデータの生成
+  gem 'faker'
+# デバッグ用
+  gem 'pry-byebug'
+  gem 'pry-doc'
+```
