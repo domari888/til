@@ -9,9 +9,14 @@ rails g model モデル名 カラム名:データ型
 ```
 (例) `users`テーブルに、カラム名が`name` ,データ型が`string`のカラムを持つ `User`モデルを生成
   
-
 ```
 rails g model User name:string
+```
+  
+(例) `uniq`をつけることで一意制をつけることができる
+
+```
+rails g model User name:string email:string:uniq
 ```
 
 ### マイグレーションを確認
