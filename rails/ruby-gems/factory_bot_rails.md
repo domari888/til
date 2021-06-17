@@ -93,3 +93,31 @@ create_list(:user, 3)
 ```
 attributes_for(:user)	
 ```
+### trait
+- `trait` を設定しておくことで簡潔に書くことができる
+
+```rb
+  trait モデルを継承したファクトリー do
+    #　処理
+  end
+```
+
+- (例) 年齢が 20 ~ 60 のユーザーを生成
+`spec/factories/users.rb`
+```rb
+FactoryBot.define do
+  factory :user do
+    name { Faker::Name.name }
+    age { rand(100) }
+    email { Faker::Internet.unique.email }
+  end
+
+  trait adult do
+    age { rand(20..60) }
+  end
+end
+```
+ターミナルで実行
+```
+create(:user, :adult)
+```
