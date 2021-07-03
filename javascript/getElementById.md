@@ -60,4 +60,23 @@
 ```html
   #=> Hello!
 ```
-
+  
+## `innerHTML`を使う
+- ボタンをクリックすると関数が実行されて、`<p>`タグ内の要素が入れ替わる
+  
+```html
+<html>
+ <body>
+ 
+  <p id="myid">こんにちは！</p>
+  <input type="button" value="Click" onclick="myfunc()">
+ 
+  <script>
+   var myfunc = function(){
+   document.getElementById("myid").innerHTML = "こんばんは！";
+   }
+  </script>
+ 
+ </body>
+</html>
+```
