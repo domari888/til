@@ -62,21 +62,68 @@
 ```
   
 ## `innerHTML`を使う
-- ボタンをクリックすると関数が実行されて、`<p>`タグ内の要素が入れ替わる
+- ボタンをクリックすると関数が実行されて、`<p>`タグ内の文字列を変更する
   
 ```html
 <html>
  <body>
  
-  <p id="myid">こんにちは！</p>
+  <p id="greet">こんにちは！</p>
   <input type="button" value="Click" onclick="myfunc()">
  
   <script>
    var myfunc = function(){
-   document.getElementById("myid").innerHTML = "こんばんは！";
+   document.getElementById("greet").innerHTML = "こんばんは！";
    }
   </script>
  
  </body>
 </html>
 ```
+
+```html
+  #=> こんばんは！
+```
+  
+## `onclick` を使用する
+- ボタンをクリックすると関数が実行されて、`<input>`タグ内の `value` 属性の値を変更する
+  
+```html
+<html>
+ <body>
+ 
+  <input type="button" id="greet" value="Click">
+ 
+  <script>
+   var btn = document.getElementById("greet");
+   var action = function(){
+    btn.value = "Hello world!";
+   }
+   btn.onclick = action;
+  </script>
+ 
+ </body>
+</html>
+```
+
+```html
+  #=> Hello world!
+```
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
