@@ -49,3 +49,21 @@ resources :posts do
 end
 ```
   
+### collection を使う
+- `id`を伴わないパスを作成する
+  
+`posts/preview`
+```rb
+resources :posts do
+  collection do
+    get 'preview'
+  end
+end
+```
+  
+- 追加するルーティングが１つの場合は`:on`を使うことができる
+```rb
+resources :posts do
+  get 'preview', on: :collection
+end
+```
