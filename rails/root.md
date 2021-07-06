@@ -1,4 +1,4 @@
-### ルーティングの書き方
+# ルーティングの書き方
 ## トップページへ
 ```rb
 root to: 'homes#index'
@@ -8,7 +8,7 @@ root to: 'homes#index'
 root 'homes#index'
 ```
   
-## RESTフルなルーティングの書き方
+## RESTfulなルーティングの書き方
 ```rb
 resoyrces :posts
 ``` 
@@ -24,3 +24,28 @@ resources :posts, only: :new
 resources :posts do
   resource :likes
 end
+```
+  
+## RESTful なルーティングを追加する
+- デフォルトで作成されるルーティングは７つだが、追加することもできる
+  
+### member　を使う
+- `id`を作成して`params[:id]`に渡す
+  
+`posts/:id/preview`
+```rb
+resources :posts do
+  member do
+    get 'preview'
+  end
+end
+```
+  
+- 追加するルーティングが１つの場合は`:on`を使うことができる
+- `id`を作成して`params[:posts_id]`に渡す
+```rb
+resources :posts do
+  get 'preview', on: :member
+end
+```
+  
