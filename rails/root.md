@@ -8,6 +8,16 @@ root to: 'homes#index'
 root 'homes#index'
 ```
   
+## RESTフルなルーティングの書き方
+```rb
+resoyrces :posts
+``` 
+  
+- コントローラへのルーティングを指定する
+```rb
+resources :posts, only: :new
+```
+  
 ## ネストしたルーティング
 - `posts`が(親)、`likes`が(子)の関係
 ```rb
