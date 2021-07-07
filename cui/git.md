@@ -1,6 +1,13 @@
-## git fetch リモート名
+## git fetch
    
-(例)`git fetch origin ブランチ名`
 - リモートリポジトリのブランチを origin/ブランチ名 としてローカルリポジトリに取り込む
 - ワークツリーには反映されない
+  
+## git fetch origin master
+  
+- リモートリポジトリのmasterブランチを origin/master ブランチとしてローカルリポジトリに取り込む
+
+## git fetch --prune
+  
+- fetchするついでにGitHubから削除されたブランチを削除
 
