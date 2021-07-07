@@ -11,3 +11,11 @@
   
 - fetchするついでにGitHubから削除されたブランチを削除
 
+## git merge ブランチ名
+  
+- 指定したブランチの変更を現在のブランチに統合
+  
+(例)`master`ブランチを現在のブランチに統合
+```
+git merge origin/master
+```
