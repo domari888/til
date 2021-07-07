@@ -28,3 +28,38 @@ post.genre_before_type_cast
 Post.genres
   #=> {"red"=>1, "blue"=>2, "yellow"=>3, "green"=>4, "pink"=>5}
 ```
+  
+## enum_help の設定
+  
+### インストール
+
+```rb
+gem 'enum_help'
+```
+  
+### 表示名を変更
+  
+- `config/locale/enum.ja.yml`を作成して追記
+  
+```rb
+ja:
+  enum:
+    color:
+      genre:
+        red: "レッド" 
+        blue:　"ブルー"
+        yellow:　"イエロー"
+        green:　"グリーン"
+        pink:　"ピンク"
+```
+```
+post = Post.find_by(genre: "red")
+post.genre_i18n
+  #=> "レッド"
+  
+Post.genres_i18n
+  #=> {"red"=>"レッド", "blue"=>"ブルー", "yellow"=>"イエロー", "green"=>"グリーン", "pink"=>"ピンク"}
+```
+
+
+
