@@ -65,3 +65,17 @@ doc = Nokogiri::HTML.parse(html)
 
 pp doc.css('h2')
 ```
+
+### content
+
+- 条件に合う要素（ノード）の content を取得
+  - (例)`h2`を選択
+  
+```rb
+html = URI.open(url).read
+doc = Nokogiri::HTML.parse(html)
+
+doc.css('h2').each do |link|
+  pp link.content.strip
+end
+```
