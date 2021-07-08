@@ -95,3 +95,16 @@ doc.css('h2').each do |link|
   puts link.content.strip
 end
 ```
+  
+### attribute
+- 選択した要素（ノード）の属性を取得する
+  
+(例)`a`タグの`href`属性を取得
+```rb
+html = URI.open(url).read
+doc = Nokogiri::HTML.parse(html)
+
+link = doc.at_css('a')
+
+puts link.attribute('href')
+```
