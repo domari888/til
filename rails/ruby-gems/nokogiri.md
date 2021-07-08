@@ -58,24 +58,40 @@ puts doc.title
 - CSSセレクタで要素(ノード)を選択して取得
   
 - 条件に合う要素を配列形式で全て取得する
-  - (例)`h2`を選択
+
+(例)`h2`を選択
 ```rb
 html = URI.open(url).read
 doc = Nokogiri::HTML.parse(html)
 
-pp doc.css('h2')
+puts doc.css('h2')
+```
+  
+### at_css
+- CSSセレクタで要素(ノード)を選択して取得する  
+  
+- 条件に合う要素を1つだけ取得する
+  - 複数ある場合は、最初の要素を取得、ない場合は`nil`を返す
+  
+(例)`h2`を選択
+```rb
+html = URI.open(url).read
+doc = Nokogiri::HTML.parse(html)
+
+puts doc.at_css('h2')
 ```
 
 ### content
 
 - 条件に合う要素（ノード）の content を取得
-  - (例)`h2`を選択
+  
+(例)`h2`を選択
   
 ```rb
 html = URI.open(url).read
 doc = Nokogiri::HTML.parse(html)
 
 doc.css('h2').each do |link|
-  pp link.content.strip
+  puts link.content.strip
 end
 ```
