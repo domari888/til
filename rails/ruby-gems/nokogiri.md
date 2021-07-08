@@ -52,3 +52,16 @@ doc = Nokogiri::HTML.parse(html)
 
 puts doc.title
 ```
+  
+  
+### css
+- CSSセレクタで要素(ノード)を選択して取得
+  
+- 条件に合う要素を配列形式で全て取得する
+  - (例)`h2`を選択
+```rb
+html = URI.open(url).read
+doc = Nokogiri::HTML.parse(html)
+
+pp doc.css('h2')
+```
