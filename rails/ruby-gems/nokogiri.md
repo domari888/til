@@ -42,3 +42,13 @@ doc = Nokogiri::HTML.parse(html, nil, 'sjis')
 ```rb
 html = URI.open(url).read.toutf8
 ```
+  
+
+### title
+  - html の title を取得
+```rb
+html = URI.open(url).read
+doc = Nokogiri::HTML.parse(html)
+
+puts doc.title
+```
