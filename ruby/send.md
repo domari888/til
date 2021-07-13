@@ -81,5 +81,5 @@ car.send(favorite_color)
   
 ## public_send
 - 使い方は`send`メソッドと同じ
-- public メソッドだけ呼び出す場合にはこちらを使う（ 直接 private メソッドにアクセスできてしまうためリスクがある ）
-[参考文書]（https://nyakanishi.work/%E3%80%90ruby%E3%80%91public_send%E3%81%A8send%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/）
+- public メソッドだけ呼び出す場合にはこちらを使う（ 直接 private メソッドにアクセスできてしまうためリスクがある ）  
+[参考文書]（ https://nyakanishi.work/ ）
