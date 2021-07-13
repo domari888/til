@@ -78,10 +78,7 @@ favorite_color = color == "red" ? "like" : "dislike"
 car.send(favorite_color)
   #=> 嫌いです
 ```
-
   
-  
-  
-  
-
-
+## public_send
+- 使い方は`send`メソッドと同じ
+- public メソッドだけ呼び出す場合にはこちらを使う（ 直接 private メソッドにアクセスできてしまうためリスクがある ）
