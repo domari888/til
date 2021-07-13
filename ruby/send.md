@@ -14,6 +14,19 @@ end
 color = Color.new
 
 color.send(:red)
-  #=> "赤です"
+  #=> 赤です
 ```
   
+- 1行で書くこともできる
+```rb
+class Color
+
+  def blue
+    puts "青です"
+  end
+
+end
+
+Color.new.send(:blue)
+  #=> 青です
+```
