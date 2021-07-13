@@ -30,3 +30,21 @@ end
 Color.new.send(:blue)
   #=> 青です
 ```
+  
+- 引数に値を渡す
+```rb
+class Foo
+  
+  def car(color)
+    puts "#{color}です"
+  end
+  
+end
+
+foo = Foo.new
+
+foo.send(:car, "赤")
+  #=> 赤です
+```
+
+
