@@ -25,3 +25,28 @@ SELECT * FROM users WHERE age IS NULL
 ```
 SELECT * FROM usres WHERE age IS NOT NULL
 ```
+  
+## LIKE %指定した文字列%
+- 指定した文字列を含んでいる行を抽出
+  
+(例)`foods`テーブルから`menu`列の文字列に`バナナ`を含む行
+```
+SELECT * FROM foods WHERE menu LIKE '%バナナ%'
+```
+`バナナパフェ`, `チョコバナナ`, `いちごバナナクレープ`などが含まれる
+  
+## LIKE %指定した文字列
+- 指定した文字列で終わる文字列を抽出
+(例)`foods`テーブルから`menu`列の文字列が`バナナ`で終わる行
+```
+SELECT * FROM foods WHERE menu LIKE '%バナナ'
+```
+`チョコバナナ`などが含まれる
+  
+## LIKE 指定した文字列%
+- 指定した文字列で始まる文字列を抽出
+(例)`foods`テーブルから`menu`列の文字列が`バナナ`で始まる行
+```
+SELECT * FROM foods WHERE menu LIKE 'バナナ%'
+```
+`バナナパフェ`などが含まれる
