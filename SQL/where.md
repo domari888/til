@@ -50,3 +50,11 @@ SELECT * FROM foods WHERE menu LIKE '%バナナ'
 SELECT * FROM foods WHERE menu LIKE 'バナナ%'
 ```
 `バナナパフェ`などが含まれる
+  
+## BETWEEN 値a AND 値b
+- `値a`と`値b`の範囲内に値が収まっているか判断する
+  - 範囲以上、範囲以下内であれば`true`をとなる
+(例)`users`テーブルで`age`が20以上３０以下の`name`を抽出
+```
+SELECT * FROM users WHERE name BETWEEW 20 AND 30
+```
