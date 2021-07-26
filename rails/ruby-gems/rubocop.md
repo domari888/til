@@ -1,4 +1,5 @@
 # rubocop
+  
 ### インストール
 ```ruby
 gem install rubocop-rails
@@ -25,19 +26,18 @@ rubocop -A
 rubocop -オプション -ファイル名
 ```
   
+## rubocop-rails
 ### カスタマイズ
 -　`Gemfile` に追記
 ```ruby
 gem 'rubocop-rails', require: false
-gem 'rubocop-performance', require: false
 ```
 　　
 - `.rubocop.yml` を作成し追記
 ```ruby
 #(例)
 require:
-  - rubocop-rails
-  - rubocop-performance
+  - rubocop-rspec
 
 AllCops:
   TargetRubyVersion: ○.○ # 自分の Ruby のバージョンを指定
@@ -78,6 +78,87 @@ Style/WordArray:
 Style/SymbolArray:
   Enabled: false
 ```
+  
+## rubocop-rspec
+### カスタマイズ
+-　`Gemfile` に追記
+```ruby
+gem 'rubocop-rspec', require: false
+```
+　　
+- `.rubocop.yml` を作成し追記
+```ruby
+#(例)
+require:
+  - rubocop-rails
+  - rubocop-performance
+  
+AllCops:
+  TargetRubyVersion: ○.○ # 自分の Ruby のバージョンを指定
+  NewCops: enable # rubocopの新機能をactiveにする
+  Exclude:
+    - "assets/**/*"
+    - "bin/**/*"
+    - "db/schema.rb"
+    - "log/**/*"
+    - "node_modules/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+  
+# 許可された接頭辞かどうかのチェックを解除
+RSpec/ContextWording:
+  Enabled: false
+
+# トップレベルの describe の第一引数が定数であるかのチェックを解除
+RSpec/DescribedClass:
+  Enabled: false
+
+# 最後のレットブロックの後に空の行があるかどうかのチェックを解除
+  # it が一行しかない場合などは少し見づらくなるため
+RSpec/EmptyLineAfterFinalLet:
+  Enabled: false
+  
+# 長い例のチェックを解除  
+RSpec/ExampleLength:
+  Enabled: false
+  
+# 変更マッチャーのスタイルが一貫しているかどうかをチェックします(設定しない場合は両方適応)
+# マッチャーの引数として、属性値を読み取るブロックを渡すことの強制
+RSpec/ExpectChange:
+  EnforcedStyle: block
+# Matcherの引数としてオブジェクトと属性を渡すことを強制
+  RSpec/ExpectChange:
+  EnforcedStyle: method_call
+
+
+# 一貫した暗黙の期待スタイルが使われているかどうかのチェックを解除
+RSpec/ImplicitExpect:
+  Enabled: false
+  
+# スペック内のインスタンス変数使用時の使用状況・使用方法のチェックを解除
+RSpec/InstanceVariable:
+  Enabled: false
+  
+# 明示的に名前を付けているかどうかのチェックを解除
+  # テストコードが読みにくくなる場合がある為
+RSpec/NamedSubject:
+  Enabled: false
+
+# 期待値がスパイを使って設定されているかどうかのチェックを解除
+RSpec/MessageSpies:
+  Enabled: false
+
+# expect 呼び出しが多すぎるかどうかのチェックを解除
+  # 複数定義する場合があるため
+RSpec/MultipleExpectations:
+  Enabled: false
+
+# 入れ子になったグループチェックを解除
+  # デフォルトの　３　だと少ない場合があり読みづらくなる可能性がある為
+RSpec/NestedGroups:
+  Max: 5
+```
+  
 ### コミット時に自動フォーマット
 - インストール
 ```ruby
