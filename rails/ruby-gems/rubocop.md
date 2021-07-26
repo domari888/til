@@ -92,8 +92,7 @@ gem 'rubocop-rspec', require: false
 ```ruby
 #(例)
 require:
-  - rubocop-rails
-  - rubocop-performance
+  - rubocop-rspec
   
 AllCops:
   TargetRubyVersion: ○.○ # 自分の Ruby のバージョンを指定
