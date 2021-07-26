@@ -81,6 +81,8 @@ Style/SymbolArray:
   
 ## rubocop-rspec
 ### カスタマイズ
+　[参考記事](https://www.webya-wagai.jp/articles/6)
+  
 -　`Gemfile` に追記
 ```ruby
 gem 'rubocop-rspec', require: false
@@ -176,10 +178,15 @@ bundle exec pre-commit install
 git config pre-commit.ruby "bundle exec ruby"
 git config pre-commit.checks "rubocop"
 ```
-　　
+
+### require: false
+　- ubocopは、ターミナル等で使用するため、bundlerによってアプリ側に自動で読み込む必要がない
+　  
+　[参考記事](https://qiita.com/S42100254h/items/170e88d888330ca92701#%E7%B5%90%E8%AB%96)
 ### 備考
 - `git diff`で差分を確認する事で挙動が変わる修正がされていないかチェック
 - 問題がある修正が行われていた場合はgit resetコマンドで修正を巻き戻し
 - デフォルトで修正指定されるファイルは省いても良い
   -`.rubocop.yml` の `Exclude:`でファイルを指定
+
   
