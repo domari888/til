@@ -43,6 +43,7 @@ environment.plugins.append('Provide', new webpack.ProvidePlugin({
 
 module.exports = environment
 ```
-
-
-
+jqueryを自動的にロードするには、jqueryが公開している両方の変数を、対応するnodeモジュールに指定する。
+- `ProvidePlugin`を使用することで自動的にモジュールをロードして、変数`$`,`jQuery`で`jquery`
+モジュールを使用できるようにする。(import/requireを使わずにモジュールを使用することができる。)
+- `append`で要素を追加できる
