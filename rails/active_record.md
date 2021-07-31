@@ -58,3 +58,8 @@ rails db:rollback STEP=3
 rails db:migrate:down VERSION=20210614115519
 ```
   
+- migrate されていないファイルを確認
+```
+rails db:abort_if_pending_migrations
+```
+  
