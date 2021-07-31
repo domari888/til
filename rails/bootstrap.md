@@ -47,3 +47,12 @@ jqueryを自動的にロードするには、jqueryが公開している両方�
 - `ProvidePlugin`を使用することで自動的にモジュールをロードして、変数`$`,`jQuery`で`jquery`
 モジュールを使用できるようにする。(import/requireを使わずにモジュールを使用することができる。)
 - `append`で要素を追加できる
+  
+## form_with の書き方
+- セレクトボックス
+```rb
+<div class="form-group">
+  <%= f.label :age %>
+  <%= f.select :age, {'10歳代': 1, '20歳代': 2, '30歳代': 3}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+</div>
+```
