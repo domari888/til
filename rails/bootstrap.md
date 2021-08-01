@@ -56,3 +56,10 @@ jqueryを自動的にロードするには、jqueryが公開している両方�
   <%= f.select :age, {'10歳代': 1, '20歳代': 2, '30歳代': 3}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
 </div>
 ```
+- enum_help を使った日本語表示
+```rb
+<div class="form-group">
+  <%= f.label :age %>
+  <%= f.select :age, User.ages_i18n.invert.keys.map {|k|[k, k]}, {include_blank: '選択してください'}, class: 'form-control' , required: true %>
+</div>
+```
