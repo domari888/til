@@ -60,6 +60,16 @@ post.genre_i18n
 Post.genres_i18n
   #=> {"red"=>"レッド", "blue"=>"ブルー", "yellow"=>"イエロー", "green"=>"グリーン", "pink"=>"ピンク"}
 ```
-
-
+  
+## セレクトボックス で 日本語訳を表示
+- `include_blank: '選択してください'`をつけることでセレクトボックスの一番初めに表示する事ができる
+  - 選択しても保存されない
+- `required: true`をつけることで入力必須とする
+```rb
+<div class="form-group">
+  <%= f.label :genre %>
+  <%= f.select :genre, Color.genres_i18n.invert.keys.map {|k|[k, k]}, include_blank: '選択してください', class: 'form-control' , required: true %>
+</div>
+```
+  
 
