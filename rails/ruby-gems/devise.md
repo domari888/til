@@ -54,7 +54,21 @@ end
 ```ruby
 before_action :authenticate_user!, except: :index
 ```
+  
+- 指定したコントローラ名、アクション名以外の時、ログイン画面へリダイレクトする
+(例)homes コントローラの index アクション以外の時はログイン画面へリダイレクト
+```rb
+class ApplicationController < ActionController::Base
+  before_action :authenticate_user!, if: :controller_name?
 
+  def controller_name?
+    unless controller_name == 'homes'　＆＆　action_name == 'index'
+      true
+    end
+  end
+end
+```
+  
 ### 追加のパラメータを渡す
 - 新規登録の際にユーザーネームを追加で渡す場合`app/views/devise/registrations/edit.html.erb
 `に下記を追記
