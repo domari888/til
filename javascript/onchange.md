@@ -1,5 +1,7 @@
-## HTMLElement: change
-  
+## onchange
+**＊現在　HTML に記載することは推進されていない**
+- js　ファイルに書いたものがグローバルに定義されていると誤解されてしまい、 HTML 側に書いた　`onChange="関数名"`は動作しなくなってしまう
+    
 ### フォームでの画像プレビューの実装例
 ```ruby
 <div class="form-group">
