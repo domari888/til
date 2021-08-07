@@ -103,3 +103,29 @@ else
  # false の処理
 end
 ```
+  
+## アカウント画像登録
+**devise/registrations/new.html.erb**
+```rb
+  <div class="form-group">
+    <%= f.label :avater do %>
+      <p><%= image_tag @user.avater.url, class: "rounded-circle", id: 'preview'%></p>
+      <%= f.file_field :avater, class: 'previewImage', accept: 'image/png,image/jpeg,image/gif', style: 'display:none;'%>
+    <% end %>
+  </div>
+```
+**javascript/packs/preview.js**
+```js
+document.addEventListener('turbolinks:load', () => {
+    const previewImage = document.querySelector('.previewImage');
+    previewImage.addEventListener('change', (e) => {
+        const fileReader = new FileReader();
+        fileReader.onload = (function() {
+        document.getElementById('preview').src = fileReader.result;
+    });
+    fileReader.readAsDataURL(e.target.files[0]);
+    });
+})
+```
+- `img_tag` と `file_field` を `do ~ end` で囲むことで画像をクリックする事でファイル選択する事ができるようになる
+- `style: 'display:none;'`とすることで入力ボタンを非表示にする事ができる
