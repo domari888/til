@@ -86,6 +86,11 @@ Metrics/MethodLength:
 Rails/NotNullColumn:
   Enabled:
     - 'db/migrate/○○○.rb'
+    
+# ヒアドキュメントで END と EO* の使用を許可
+Naming/HeredocDelimiterNaming:
+  Exclude:
+    - 'ファイル名'
 ```
   
 ## rubocop-rspec
