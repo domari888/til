@@ -77,6 +77,10 @@ Style/WordArray:
 
 Style/SymbolArray:
   Enabled: false
+  
+# メソッドの最大行数を 20 に変更
+Metrics/MethodLength:
+  Max: 20
 ```
   
 ## rubocop-rspec
