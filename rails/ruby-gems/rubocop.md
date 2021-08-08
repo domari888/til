@@ -81,6 +81,11 @@ Style/SymbolArray:
 # メソッドの最大行数を 20 に変更
 Metrics/MethodLength:
   Max: 20
+  
+# デフォルト値のないカラムでの NOT NULL 制約を許可
+Rails/NotNullColumn:
+  Enabled:
+    - 'db/migrate/○○○.rb'
 ```
   
 ## rubocop-rspec
