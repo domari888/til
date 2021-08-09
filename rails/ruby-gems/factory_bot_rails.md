@@ -58,14 +58,32 @@ end
 コンソールから実行することでテストすることができる。
 `rails c -s` と `-s` オプションを使用することでコンソール終了時にデータベースに対する全ての変更をロールバックすることができる
   
+(例)
 ```rb
 FactoryBot.define do
   factory :user do
-    name { "MyString" }
-    age { 1 }
-    email { "MyString" }
+    name { Faker::Name.name }
+    email { Faker::Internet.unique.email }
+    password { Faker::Internet.password(min_length: 8) }
+    age { rand(1..7) }
+    address { rand(1..47) }
+    household { rand(1..6) }
+    profile { Faker::Lorem.sentence }
+    avater { Rack::Test::UploadedFile.new(Rails.root.join('images/fallback/default.png')) }
+  end
 end
 ```
+**注意**
+Factory_bot_rails で画像ファイルへのパスを書くときは
+```rb
+File.open("#{Rails.root}/public/images/fallback/default.png")
+```
+ではなく
+```rb
+Rack::Test::UploadedFile.new(Rails.root.join('images/fallback/default.png'))
+```
+としないと `rubocop` で指摘される
+  
 - ユーザーのインスタンスを生成
 ```
 FactoryBot.build(:user)
