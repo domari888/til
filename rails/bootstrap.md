@@ -63,3 +63,14 @@ jqueryを自動的にロードするには、jqueryが公開している両方�
   <%= f.select :age, User.ages_i18n.invert.keys.map {|k|[k, k]}, {include_blank: '選択してください'}, class: 'form-control' , required: true %>
 </div>
 ```
+  
+## Navber
+- ナビバー内の各要素を 100% 幅で均等に配置
+```rb
+  <div class="navbar-nav w-100 justify-content-between">
+     .
+     .
+  </div>
+```
+- `w-100` で幅を 100% にする
+- `justify-content-between` で均等に配置
