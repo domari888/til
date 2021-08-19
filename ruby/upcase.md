@@ -8,3 +8,12 @@
 "Ruby on Rails".upcase
   #=> "RUBY ON RAILS"
 ```
+
+## 配列.map(&:upcase)
+配列から要素を取り出し、大文字に置き換えて新しい配列を返す
+  
+```rb
+array = ["a", "b", "c"]
+
+p array.map(&:upcase)
+  #=> ["A", "B", "C"]
