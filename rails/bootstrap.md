@@ -85,3 +85,10 @@ jqueryを自動的にロードするには、jqueryが公開している両方�
     配置したい要素
   </div>
 ```
+(例)`users`テーブルの`image`画像を上下左右中央に配置
+```rb
+  <div class="d-flex align-items-center justify-content-center">
+   <%= image_tag user.image.url, class: "img-fluid" %>
+  </div>
+```
+- `img-fluid`　でアスペクト比を保ったままレスポンシブ対応する
