@@ -74,3 +74,14 @@ jqueryを自動的にロードするには、jqueryが公開している両方�
 ```
 - `w-100` で幅を 100% にする
 - `justify-content-between` で均等に配置
+  
+<br>
+
+## 上下左右中央に配置
+- 配置したい要素の親要素のクラスに`d-flex align-items-center justify-content-center`定義
+  
+```rb
+  <div class="d-flex align-items-center justify-content-center">
+    配置したい要素
+  </div>
+```
