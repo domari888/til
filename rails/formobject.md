@@ -78,4 +78,8 @@ def update
     render :edit
   end
 end
+
+def set_post
+  @post = current_user.posts.find(params[:id])
+end
 ```
