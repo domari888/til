@@ -131,3 +131,16 @@ class PostForm
     }
   end
   ```
+    
+  【 views 】
+  ```rb
+  <%= form_with model: @post_form, local: true do |form| %>
+  <%= form.text_field :title %>
+  <%= form.text_area :content %>
+  <%= form.text_field :tag_names %>
+  <%= form.submit %>
+<% end %>
+```
+  
+`post_form.rb` で `delegate :persisted?, to: :post` と `def to_model post end` を定義することでコントローラのない `@post_form` でも自動的に`POST`か`PATCH`か振り分けてくれる
+
