@@ -24,7 +24,7 @@ end
 ```
 
 - コントローラで`FormObject.Class`にユーザーの入力値を渡して、バリデーションが成功したら保存
-　　
+  
 【 posts_controller.rb 】
 ```rb
 def create
