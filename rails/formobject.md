@@ -41,7 +41,7 @@ def create
     private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :image)
   end
 ```
 
@@ -64,7 +64,7 @@ end
 ```rb
 def edit
   set_post
-  @form = PostForm.new(post: @post)
+  @post_form = PostForm.new(post: @post)
 end
 
 def update
@@ -83,3 +83,51 @@ def set_post
   @post = current_user.posts.find(params[:id])
 end
 ```
+  
+【 post_form.rb 】
+```rb
+class PostForm
+  include ActiveModel::Model
+
+  attr_accessor :title, :content, :image
+
+  validates :title, presence: true
+  validates :content, presence: true
+  validates :image, presence: true
+
+  delegate :persisted?, to: :post
+
+  def initialize(attributes = nil, post: Post.new)
+    @post = post
+    attributes ||= default_attributes
+    super(attributes)
+  end
+
+  def save
+    return if invalid?
+
+    ActiveRecord::Base.transaction do
+      post.photos.delete_all
+      post.update!(title: title, content: content)
+      post.photos.build(image: image).save!
+    end
+  rescue ActiveRecord::RecordInvalid
+    false
+  end
+
+  def to_model
+    post
+  end
+
+  private
+
+  attr_reader :post
+
+  def default_attributes
+    {
+      title: post.title,
+      content: post.content,
+      image: post.photos
+    }
+  end
+  ```
