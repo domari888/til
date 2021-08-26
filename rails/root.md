@@ -13,11 +13,23 @@ root 'homes#index'
 resoyrces :posts
 ``` 
   
-- コントローラへのルーティングを指定する
+- アクションを指定する
 ```rb
 resources :posts, only: :new
 ```
   
+- 不要なアクションを指定する
+```rb
+resources :posts, except: :new
+```
+
+- 複数のアクションを指定する
+```rb
+resoyrces :posts, %i[new edit]
+```
+
+<br>
+
 ## ネストしたルーティング
 - `posts`が(親)、`likes`が(子)の関係
 ```rb
