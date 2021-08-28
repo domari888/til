@@ -11,3 +11,12 @@ justify-content: center;
 span {
   display: inlineblock
 }
+```
+  
+<br>
+
+## インライン要素を左右中央に配置する
+
+```css
+text-align: center; 
+```
