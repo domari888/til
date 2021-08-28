@@ -20,3 +20,12 @@ span {
 ```css
 text-align: center; 
 ```
+
+<br>
+
+## ブロックレベル要素を左右中央に配置する
+
+```css
+margin: 0 auto;
+```
+
