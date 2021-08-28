@@ -40,4 +40,11 @@ text-align: center;
 ```css
 margin: 0 auto;
 ```
+  
+## ブロックレベル要素を上下中央に配置する
+- ブロック要素をインライン要素化する
+- インライン化した要素を上下中央に配置
 
+```css
+display:inline-block; 
+```
