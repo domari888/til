@@ -21,6 +21,18 @@ span {
 text-align: center; 
 ```
 
+ ## インライン要素を上下中央に配置する
+ 
+ ```css
+ vertical-align: middle; 
+ ```
+ 
+ ブロック要素内のインライン要素を上下中央に配置する際はテーブルセル化する
+ 
+ ```css
+ display: table-cell;
+ ```
+
 <br>
 
 ## ブロックレベル要素を左右中央に配置する
