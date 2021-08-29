@@ -48,3 +48,17 @@ p post.photos.first
     
 p post.photos.first.image.url
   #=> "/uploads/photo/image/1/default.png"
+ ```
+ 
+ <br>
+ 
+ ### 画像のサイズを指定する
+ - `size: "〇x〇"`を`image_tag`に追記する
+   
+ ```rb
+ <%= image_tag post.photos.first.image.url, size: "32x32"  %>
+ ```
+ 
+ <br>
+ 
+ 
