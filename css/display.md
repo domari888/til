@@ -12,6 +12,19 @@ span {
   display: inlineblock
 }
 ```
+
+### display: flex;
+- 親要素に`flex`を指定して、ボックスを横並びにして、高さを最も内容量が大きいボックスに合わせる
+(例)`image`タグ(画像)を 幅 300px にして高さを合わせる。
+```css
+.image_box {
+  display: flex;
+}
+
+.image {
+  width: 300px;
+}
+```
   
 <br>
 
