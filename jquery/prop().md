@@ -14,3 +14,16 @@ $('div').prop('id', function(index) {
   if (index === 1 ) return 'preview'; 
 });
 ```
+  
+### disabled 属性
+指定した要素を無効にする
+  
+(例)`input`を無効にする
+```js
+$('input').prop('disabled', true);
+```
+  
+(例)`id="new-button"`を持つ要素を無効にする
+```js
+$('#new-button').prop('disabled', true);
+```
