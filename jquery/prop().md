@@ -27,3 +27,17 @@ $('input').prop('disabled', true);
 ```js
 $('#new-button').prop('disabled', true);
 ```
+
+<br>
+
+指定した要素の無効化を解除する
+  
+(例)`input`を解除する
+```js
+$('input').prop('disabled',  false);
+```
+  
+(例)`id="new-button"`を持つ要素を解除する
+```js
+$('#new-button').prop('disabled', false);
+```
