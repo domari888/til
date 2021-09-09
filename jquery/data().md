@@ -36,7 +36,7 @@ console.log('info');
   
 ### 要素.data(属性値, 値);
   
-(例)data 属性に`address`を設定
+(例)data 属性に`住所`の`data 属性`を設定
 ```js
 $('div').data('address', 'kanagawa');
 ```
@@ -51,5 +51,36 @@ const info = $('div').data('address');
 console.log('info');
   //=> kanagawa
 ```
+  
+<br>
+
+## 変更
+  
+### 要素.data(属性値, 値);
+変更する際は、設定するときと同じやり方で上書きする
+  
+(例)data 属性の`address`を変更
+```js
+const info = $('div').data('address');
+
+console.log('info');
+  //=> kanagawa
+```
+  
+```js
+$('div').data('address', 'tokyo');
+```
+【実行後】
+```erb
+<div data-name="Taro" data-age="20", address="tokyo">独自のdata属性</div>
+```
+```js
+const info = $('div').data('address');
+
+console.log('info');
+  //=> tokyo
+```
+  
+
 
 
