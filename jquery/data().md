@@ -29,4 +29,27 @@ const info = $('div').data('name');
 console.log('info');
   //=> Taro
 ```
+  
+<br>
+
+## 設定
+  
+### 要素.data(属性値, 値);
+  
+(例)data 属性に`address`を設定
+```js
+$('div').data('address', 'kanagawa');
+```
+【実行後】
+```erb
+<div data-name="Taro" data-age="20", address="kanagawa">独自のdata属性</div>
+```
+  
+```js
+const info = $('div').data('address');
+
+console.log('info');
+  //=> kanagawa
+```
+
 
