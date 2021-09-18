@@ -8,6 +8,8 @@
   
 参考 : [Array.prototype.slice() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
   
+参考 : [Removing elements from dropped FileList](https://stackoverflow.com/questions/15136624/removing-elements-from-dropped-filelist)
+  
 <br>
 
 ## Array.prototype.slice.call(arguments);
