@@ -35,6 +35,14 @@ Array.prototype.slice.call(dataBox.files, -1)[0];
 
 <br>
 
+### Array.prototype.slice.call(arguments)　の簡略化した書き方
+
+```js
+[].slice.call(arguments);
+```
+
+<br>
+
 ### Array.prototype.slice.call(arguments)　の新しい書き方
 
 ```js
