@@ -25,3 +25,8 @@ let dataBox = new DataTransfer();
     
 Array.prototype.slice.call(dataBox.files, -1)[0];
 ```
+
+(例)`[]`を使って簡略化することができるが、空配列を作成する
+```js
+[].slice.call(dataBox.files, -1)[0];
+```
