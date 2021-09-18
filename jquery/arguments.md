@@ -4,6 +4,10 @@
 
 参考 : [配列風オブジェクトを配列に展開する](https://www.konosumi.net/entry/2019/05/26/220321)
   
+参考 : [arguments - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/arguments)
+  
+参考 : [Array.prototype.slice() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+  
 <br>
 
 ## Array.prototype.slice.call(arguments);
