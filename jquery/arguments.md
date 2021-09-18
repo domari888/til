@@ -1,6 +1,8 @@
 # arguments
 配列風オブジェクト。
 `length`以外の配列オブジェクトを持っていない。
+
+参考 : [配列風オブジェクトを配列に展開する](https://www.konosumi.net/entry/2019/05/26/220321)
   
 <br>
 
@@ -35,7 +37,8 @@ Array.prototype.slice.call(dataBox.files, -1)[0];
 
 <br>
 
-### Array.prototype.slice.call(arguments)　の簡略化した書き方
+### [].slice.call()
+Array.prototype.slice.call(arguments)　の簡略化した書き方
 
 ```js
 [].slice.call(arguments);
@@ -43,11 +46,18 @@ Array.prototype.slice.call(dataBox.files, -1)[0];
 
 <br>
 
-### Array.prototype.slice.call(arguments)　の新しい書き方
+### Array.from()
+Array.prototype.slice.call(arguments)　の新しい書き方
 
 ```js
 Array.from(arguments);
 ```
+
+<br>
+
+### スプレット構文
+Array.prototype.slice.call(arguments)　の新しい書き方
+  
 ```js
 [...arguments];
 ```
