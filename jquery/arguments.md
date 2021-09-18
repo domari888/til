@@ -18,6 +18,8 @@ Array.prototype.slice.call(dataBox.files);
 <br>
 
 ### 最後の要素を取得する
+**`.slice()`を使用しているため`-1`で取得することができる**
+  
 (例)`dataBox`の`最後の file`を取得する
 ```js
 //DataTransferオブジェクトで、データを格納する箱を作る
