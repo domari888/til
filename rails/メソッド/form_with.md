@@ -8,3 +8,14 @@
   ~ 省略 ~
 <% end %>
 ```
+
+<br>
+
+## model: [ ]
+複数のインスタンス変数を渡す
+  
+```rb
+<%= form_with model: [@post, @comment] do |form| %>
+  ~ 省略 ~
+<% end %>
+```
