@@ -19,3 +19,16 @@
   ~ 省略 ~
 <% end %>
 ```
+
+<br>
+
+## fidden_field
+非表示のフォームを作成して、値を隠して渡す
+  
+(例)フォームは非表示の状態で`user_id`に`current_user.id`を渡して送信する
+```rb
+<%= form_with model: item, local: true do |form| %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+<%= form.submit "投稿する", class: "btn btn-info" %>
+<% end %>
+```
