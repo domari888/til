@@ -110,3 +110,11 @@
   #=> Hello world!
 ```
   
+<br>
+
+## 取得した要素に値を代入
+入力フォームなどの値をリセットしたりするときに使用
+  
+(例)`id='preview'`を持つ要素の値を空にする
+```js
+document.getElementById('preview').value = '';
