@@ -14,3 +14,14 @@ respond_to do |format|
   format.html { redirect_to root_path }
 end
 ```
+
+<br>
+
+## respond_to :アクション名
+(例)レスポンスのフォーマットを切り替える
+  
+(例)フォーマットを`js`に切り替える
+```rb
+respond_to :js
+```
+
