@@ -1,6 +1,10 @@
 # collection_check_boxes
   
 モデルからチェックボックスを自動生成する
+  
+[参考文書](https://pikawaka.com/rails/form_with#form.collection_check_boxes)
+[参考文書](https://pote-chil.com/rails_collection_check_boxes/)
+
 ```rb
   <%= form.collection_check_boxes(保存されるカラム名, オブジェクトの配列, カラムに保存される項目, チェックボックスに表示されるカラム名 ) %>
 ```
