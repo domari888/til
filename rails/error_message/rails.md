@@ -18,3 +18,11 @@ sudo rm -f /usr/local/var/postgres/postmaster.pid
 brew services restart postgresql
 ```
 
+ <br>
+ 
+ ## PG UndefinedTable ERROR: relation ○○○○○ does not exist
+ `○○○○○`というテーブルが存在しない場合に発生する
+   
+ ### 原因
+ - `rails db:migrate`をし忘れていて、テーブルが作成されていない
+ - `Heroku`では**日付順**に migrate　されるため、作成日時の順番によっては参照の際にエラーが発生する
