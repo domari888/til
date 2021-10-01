@@ -78,6 +78,10 @@ Style/WordArray:
 Style/SymbolArray:
   Enabled: false
   
+# メソッドの ABC サイズ構成の最大値を 20に変更
+Metrics/AbcSize
+  Max: 20
+
 # メソッドの最大行数を 20 に変更
 Metrics/MethodLength:
   Max: 20
