@@ -8,5 +8,13 @@
 (例)`Category`モデルの`name`をラベルにしたチェックボックスを作成して、選択した項目の`id`を中間テーブルの`category_id`に保存
 - 複数選択されるため`category_ids`としておく
 ```rb
+  <%= form.collection_check_boxes :category_ids, Category.all, :id, :name do |form| %>
+```
+
+<br>
+
+## include_hidden: false
+送信後のパラメータの配列の最初に value が`""`の `hidden` タグが挿入されるのを防ぐ
+```rb
   <%= form.collection_check_boxes :category_ids, Category.all, :id, :name, include_hidden: false do |form| %>
 ```
