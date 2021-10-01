@@ -3,6 +3,7 @@
 モデルからチェックボックスを自動生成する
   
 [参考文書](https://pikawaka.com/rails/form_with#form.collection_check_boxes)
+  
 [参考文書](https://pote-chil.com/rails_collection_check_boxes/)
 
 ```rb
