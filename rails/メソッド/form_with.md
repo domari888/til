@@ -32,3 +32,17 @@
 <%= form.submit "投稿する", class: "btn btn-info" %>
 <% end %>
 ```
+
+<br>
+
+## hidden_field_tag
+非表示のフォームを作成して、値を隠して渡す(単体でも使用可能)
+```rb
+<%= hidden_field_tag :カラム名, 値 %>
+```
+  
+(例)フォームは非表示の状態で`user_id`に`current_user.id`を渡して送信する
+```rb
+<%= hidden_field_tag :user_id, current_user.id %>
+```
+
