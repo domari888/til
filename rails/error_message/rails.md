@@ -26,3 +26,12 @@ brew services restart postgresql
  ### 原因
  - `rails db:migrate`をし忘れていて、テーブルが作成されていない
  - `Heroku`では**日付順**に migrate　されるため、作成日時の順番によっては参照の際にエラーが発生する
+
+<br>
+
+## ActiveModel::UnknownAttributeError
+(例)`Post`モデルに`image`というカラムがない
+```
+ActiveModel::UnknownAttributeError in PostsController#update
+unknown attribute 'image' for Post.
+```
