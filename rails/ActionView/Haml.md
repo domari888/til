@@ -22,6 +22,11 @@ gem "haml-rails", "~> 2.0"
     %h1= @title
     %p テキスト
 ```
+- HTML タグは`%`から始める
+- `id`や`class`付きの div タグは`%div`を省略することが可能
+  - (例)`%div#id.class` → `#id.class`
+- 表示しないものは`?`から始める(if, each など)
+  - (例)`? if user.present? `
 
 <br>
 
@@ -29,3 +34,5 @@ gem "haml-rails", "~> 2.0"
 ```
 rails haml:erb2haml
 ```
+
+
