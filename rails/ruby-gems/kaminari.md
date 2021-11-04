@@ -23,3 +23,17 @@ Item.where(genre: "toy").page(params[:page]).per(10)
 ```rb
 Item.page(params[:page]).where(genre: "toy").per(10)
 ```
+
+<br>
+
+## 日本語化
+```yml
+ja:
+  views:
+    pagination:
+      first: "&laquo;"        # <<
+      last: "&raquo;"         # >>
+      previous: "&lsaquo;"    # <
+      next: "&rsaquo;"        # >
+      truncate: "&hellip;"    # ...
+```
