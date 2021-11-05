@@ -43,7 +43,9 @@
 <br>
 
 ## 選択されたチェックボックスを取得(JavaScript)
-【js】
+【 js 】
+  
+[参考文書](https://gray-code.com/javascript/get-only-selected-checkboxes/)
   
 ```js
 const checkedData = document.querySelectorAll('input[type=checkbox]:checked');
