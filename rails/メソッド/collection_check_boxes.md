@@ -39,3 +39,12 @@
   </label>
 <% end %>
 ```
+
+<br>
+
+## 選択されたチェックボックスを取得(JavaScript)
+【js】
+  
+```js
+const checkedData = document.querySelectorAll('input[type=checkbox]:checked');
+```
