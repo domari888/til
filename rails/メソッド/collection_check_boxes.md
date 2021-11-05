@@ -23,3 +23,19 @@
 ```rb
   <%= form.collection_check_boxes :category_ids, Category.all, :id, :name, include_hidden: false do |form| %>
 ```
+
+<br>
+
+## class 属性を付与
+  
+[参考文書](https://github.com/bootstrap-ruby/bootstrap_form/issues/256)
+  
+## class 属性を付与
+```rb
+<%= form.collection_check_boxes :category_ids, Category.all, :id, :name, include_hidden: false do |form| %>
+  <label class="form-check col-6 col-md-4 col-lg-2 flex-wrap m-0">
+    <%= form.check_box %>
+    <%= form.text %>
+  </label>
+<% end %>
+```
