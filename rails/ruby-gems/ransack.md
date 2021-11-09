@@ -65,6 +65,19 @@ end
 - 関連するモデルの名前  `tags`
 - 関連するモデルのカラムの名前  `name`
 - 述語  `cont`
+  
+### チェックボックスを使用して検索フォームを実装する
+テーブルがある場合は`collection_check_boxes`を使用してフォームを実装することができる
+(例)`Post`モデルに紐づく`Tag`モデルの`id`を検索する
+```rb
+<%= search_form_for @q do |form| %>
+  <div class="form-group mt-3">
+    <%= form.label :tags_id_in, "タグ" %>
+    <%= form.collection_check_boxes :tags_id_in, Tag.all, :id, :name, include_hidden: false %>
+  </div>
+<% end %>
+```
+
 
 <br>
 
