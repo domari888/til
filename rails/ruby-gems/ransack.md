@@ -2,6 +2,10 @@
   
 検索機能
 
+[Ransack公式](https://github.com/activerecord-hackery/ransack)
+  
+[参考文書](https://nekorails.hatenablog.com/entry/2017/05/31/173925)
+
 <br>
 
 ## モデルのカラムを検索する
@@ -29,6 +33,7 @@ end
 <br>
 
 ## 関連するモデルを検索する
+[参考文書](https://qiita.com/sew_sou19/items/520d4348b2eaa7bf792c)
 ```
 <%= search_form_for @q do |f| %>
   <%= f.フォームヘルパー :関連するモデルの名前_関連するモデルのカラムの名前_述語 %>
@@ -67,6 +72,8 @@ end
 - 述語  `cont`
   
 ### チェックボックスを使用して検索フォームを実装する
+[参考文書](https://qiita.com/nishina555/items/2c1f8bae980e426519bc#%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E6%A4%9C%E7%B4%A2)
+  
 テーブルがある場合は`collection_check_boxes`を使用してフォームを実装することができる
 (例)`Post`モデルに紐づく`Tag`モデルの`id`を検索する
 ```rb
