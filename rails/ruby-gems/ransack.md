@@ -41,7 +41,7 @@ end
 ```rb
 <%= search_form_for @q do |form| %>
   <div class="form-group pb-3">
-    <%= form.label :user_name_cont, "キーワード" %>
+    <%= form.label :user_name_cont, "ユーザーネーム" %>
     <%= form.search_field :user_name_cont, class: 'form-control' %>
     <%= f.submit "検索" %>
   </div>
@@ -56,7 +56,7 @@ end
 ```rb
 <%= search_form_for @q do |form| %>
   <div class="form-group pb-3">
-    <%= form.label :tags_name_cont, "キーワード" %>
+    <%= form.label :tags_name_cont, "タグ" %>
     <%= form.search_field :tags_name_cont, class: 'form-control' %>
   </div>
 <% end %>
