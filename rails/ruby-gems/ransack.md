@@ -4,6 +4,30 @@
 
 <br>
 
+## モデルのカラムを検索する
+コントローラに`ransack`を用いた検索機能を利用するための処理を記載
+(例)`Post`モデルの`content`を検索する
+```rb
+class PostsController < ApplicationController
+
+  def index
+    @q = Post.ransack(params[:q])
+    @posts = @q.result
+  end
+end
+```
+```rb
+<%= search_form_for @q do |form| %>
+  <div class="form-group pb-3">
+    <%= form.label :content_cont, "キーワード" %>
+    <%= form.search_field :content_cont, class: 'form-control' %>
+    <%= f.submit "検索" %>
+  </div>
+<% end %>
+```
+
+<br>
+
 ## 関連するモデルを検索する
 ```
 <%= search_form_for @q do |f| %>
