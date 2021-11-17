@@ -1,4 +1,4 @@
-blank?
+# blank?
   
 指定したオブジェクトが`空文字`,`false`, `nil`の場合`true`を返す。
   
@@ -26,4 +26,11 @@ text = false
 
 text.blank?
   => true
+```
+(例)オブジェクトが`文字列`の場合
+```rb
+text = "テキスト"
+
+text.blank?
+  => false
 ```
