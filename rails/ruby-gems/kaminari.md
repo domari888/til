@@ -37,3 +37,15 @@ ja:
       next: "&rsaquo;"        # >
       truncate: "&hellip;"    # ...
 ```
+
+<br>
+
+## ページネーション時のパラメータ名を変更する
+  
+ページネーションのテンプレートを渡す際に`param_name: パラメータ名`とすることで、コントローラで指定したパラメータ名でページ番号を受け取ることができる
+- デフォルトでは`params[:page]`
+  
+(例)`params[:post_page]`でページ番号を受け取る
+```rb
+<%= paginate @posts, param_name: "post_page" %>
+```
