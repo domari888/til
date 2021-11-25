@@ -49,3 +49,13 @@ ja:
 ```rb
 <%= paginate @posts, param_name: "post_page" %>
 ```
+
+<br>
+
+## ページネーション時のパラメータに追加
+  
+ページネーションのテンプレートを渡す際に`params: { 〇〇: "XX" }`とすることでパラメータを受け取ることができる
+(例)`params[:action]`で`new`を受け取る
+```rb
+<%= paginate @posts, params: { action: "new" } %>
+```
