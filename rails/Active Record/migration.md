@@ -61,3 +61,15 @@ rails db:migrate:down VERSION=20210614115519
 rails db:abort_if_pending_migrations
 ```
   
+<br>
+
+## マイグレーションファイルの削除
+  
+- 削除したいマイグレーションファイルの`Migration ID`を指定して`down`にする
+```
+rails db:migrate:down VERSION=`Migration ID`
+```
+- マイグレーションファイルを削除
+```
+rm -rf db/migrate/`Migration ID`
+```
