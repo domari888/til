@@ -12,6 +12,9 @@ User.joins(:posts)
 User.joins(:posts).distinct
 ```
   
+<br>
+
+## 複数のテーブルを結合する
 (例)コメントされた投稿のあるユーザーを取得(重複なし)
 ```rb
 User.joins(:posts, :comments).distinct
