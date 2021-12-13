@@ -11,3 +11,8 @@ User.joins(:posts)
 ```rb
 User.joins(:posts).distinct
 ```
+  
+(例)コメントされた投稿のあるユーザーを取得(重複なし)
+```rb
+User.joins(:posts, :comments).distinct
+```
