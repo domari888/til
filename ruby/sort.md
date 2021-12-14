@@ -6,9 +6,17 @@
 
 ## キーを昇順で表示する
 ```rb
-fruits = {three: 3, two: 2, one: 1,}
+fruits = {three: 3, two: 2, one: 1}
 number = number.sort.to_h
 
 puts number
 #=> {one: 1, two: 2, three: 3}
+```
+  
+## 二次元配列を昇順で表示
+```rb
+@graphs=[["three", 3], ["two", 2], ["one", 1]]
+  
+@graphs.sort {|key, value| key[1] <=> value[1]}
+#=> [["one", 1], ["two", 2], ["three", 3]]
 ```
