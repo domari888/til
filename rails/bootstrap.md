@@ -92,3 +92,15 @@ jqueryを自動的にロードするには、jqueryが公開している両方�
   </div>
 ```
 - `img-fluid`　でアスペクト比を保ったままレスポンシブ対応する
+  
+## メディアクエリを使用する
+scss ファイルに書き込む
+```scss
+@media (min-width: 992px) {
+  .app-name {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+  }
+}
+```
