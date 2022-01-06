@@ -94,13 +94,12 @@ jqueryを自動的にロードするには、jqueryが公開している両方�
 - `img-fluid`　でアスペクト比を保ったままレスポンシブ対応する
   
 ## メディアクエリを使用する
-scss ファイルに書き込む
+- ブレークポイントwp`sass ファイル`に書き込み指定する
+(例)画面幅が`lg 以上`の場合`class="target"`を持つ要素に`css`を適応する
 ```scss
 @media (min-width: 992px) {
-  .app-name {
-    position: absolute;
-    top: 10px;
-    left: 50%;
+  .target {
+    # 処理
   }
 }
 ```
