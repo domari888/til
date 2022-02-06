@@ -45,4 +45,12 @@
 ```rb
 <%= hidden_field_tag :user_id, current_user.id %>
 ```
+  
+<br>
+
+## readonly: true
+読み取り専用のフォームにする
+```rb
+<%= form.text_field :name, class: "form-control", readonly: true %>
+```
 
