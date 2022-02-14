@@ -99,4 +99,16 @@ ActiviAdmin.setup do |config|
 end
 ```
   
-  
+## アクションごとのカスタマイズ
+### 画像を表示
+(例)詳細画面で画像を表示
+- `style`を設定して画像サイズを設定
+```rb
+show do
+  attributes_table do
+    row :avatar do
+      image_tag(user.avatar.url, :style => 'height:100px;')
+    end
+  end
+end
+```
