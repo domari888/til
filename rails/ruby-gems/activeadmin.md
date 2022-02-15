@@ -112,3 +112,13 @@ show do
   end
 end
 ```
+  
+### チェックボックスをオンにする
+- `terms_of_use`カラムのチェックボックスをオンにする
+```rb
+form do |f|
+  f.inputs do
+    f.input :terms_of_use, input_html: { value: '1' }
+  end
+end
+```
