@@ -1,4 +1,5 @@
 # form_with
+[参考](https://pikawaka.com/rails/form_with)
   
 ## local: false
 非同期通信でフォームを送信する
@@ -53,4 +54,15 @@
 ```rb
 <%= form.text_field :name, class: "form-control", readonly: true %>
 ```
-
+  
+<br>
+  
+## form.collection_select
+[Rails ドキュメント](https://railsdoc.com/page/collection_select)
+```rb
+<%= form.collection_select :保存するカラム名, オブジェクトの配列の情報, カラムに保存する項目, セレクトボックスの選択肢の項目, オプション, HTML属性 %>
+```
+(例)`name`をセレクトボックスで表示して`id`を`user_id`カラムに保存
+```rb
+<%= form.collection_select :user_id, User.all, :id, :name, include_hidden: false %>
+```
