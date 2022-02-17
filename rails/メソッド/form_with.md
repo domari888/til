@@ -33,7 +33,7 @@
 <%= form.submit "投稿する", class: "btn btn-info" %>
 <% end %>
 ```
-
+  
 <br>
 
 ## hidden_field_tag
@@ -66,3 +66,12 @@
 ```rb
 <%= form.collection_select :user_id, User.all, :id, :name, include_hidden: false %>
 ```
+### オプション
+| オプション | 内容 | 例 |
+| - | - | - |
+| prompt | 未選択時に表示される文字を設定 | prompt: "選択してください" |
+| include_blank | 未選択時に表示される文字を設定 | include_blank: "選択してください" |
+| selected | はじめに選択されている状態にする | selected: 選択した状態にする番数 |
+| disabled | 選択できない状態にする | disabled: 選択できない状態にする番数 |
+| include_hidden: true | パラメータに含まれる空白を排除 | |
+
