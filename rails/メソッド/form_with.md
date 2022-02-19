@@ -74,4 +74,11 @@
 | selected | はじめに選択されている状態にする | selected: 選択した状態にする番数 |
 | disabled | 選択できない状態にする | disabled: 選択できない状態にする番数 |
 | include_hidden: true | パラメータに含まれる空白を排除 | |
-
+  
+<br>
+  
+### required: true
+[Required Field on collection_select type field - Stack Overflow](https://stackoverflow.com/questions/35726763/required-field-on-collection-select-type-field#:~:text=As%20per%20the%20syntax%20options%20and%20html_options%20are%20hashes%2C%20so%20you%20need%20to%20enclose%20them%20in%20braces.)
+```rb
+<%= form.collection_select :user_id, User.order(name: :asc), :id, :name, { include_blank: '選択してください' }, { required: true } %>
+```
