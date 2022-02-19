@@ -54,6 +54,17 @@ rails g active_admin:resource モデル名
 rails g active_admin:resource User
 ```
   
+### Comment モデルを作成する場合
+Active Admin では管理者側で扱う Comment モデルが存在するため、競合してエラーが起きてしまう。
+  
+(解決策)
+`config/initializers/active_admin.rb`で下記の記述のコメントアウトを外し、管理者側で扱う Comment モデルを`AdminComment`モデルとして扱う
+```rb
+config.comments_registration_name = 'AdminComment'
+```
+  
+<br>
+  
 ## 管理画面でデータを更新する設定
 - 管理するモデルのデータを更新するために、更新したいカラムを`app/admin/users.rb`に設定
 
