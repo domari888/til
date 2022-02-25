@@ -42,3 +42,21 @@ ja:
       min_size_error: "を%{min_size}以上のサイズにしてください"
       max_size_error: "を%{max_size}以下のサイズにしてください"
 ```
+  
+<br>
+
+## 画像削除用のチェックボックスを作成
+```rb
+<%= form.check_box :remove_カラム名 %>
+```
+(例)`avatar`の削除用チェックボックスを作成
+フォームを作成
+```rb
+<%= form.check_box :remove_avatar %>
+```
+ストロングパラメータで削除要チェックボックスの値を受け取れるように設定
+```
+def user_params
+  params.require(:user).permit(:remove_avatar)
+end
+```
