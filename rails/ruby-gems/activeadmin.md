@@ -110,6 +110,18 @@ ActiviAdmin.setup do |config|
 end
 ```
   
+<br>
+  
+## アクションを追加
+(例)`Post モデル`の詳細ページに`アプリへの投稿詳細リンク`を作成
+```rb
+action_item :show_page, only: :show do
+  link_to 'アプリで見る', post_path(post)
+end
+```
+  
+<br>
+  
 ## アクションごとのカスタマイズ
 ### 画像を表示
 (例)詳細画面で画像を表示
