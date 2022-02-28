@@ -145,3 +145,25 @@ form do |f|
   end
 end
 ```
+  
+<br>
+  
+## 作成時(new)のみフォームを表示する
+```rb
+if form.object.new_record?
+  # フォーム
+end
+```
+(例)新しいレコードでなければ保存されている画像を表示する
+```rb
+<%= form_with model: [:admin, resource], local: true do |form| %>
+  <% unless form.object.new_record? %>
+    <%= form.label '現在の画像' %>
+    <%= form.collection_check_boxes :photo_ids, resource.photos, :id, :image, checked: false, include_hidden: false do |f| %>
+      <%= f.check_box %>
+      <%= image_tag(f.object.image.url, size: '100x100') %>
+    <% end %>
+    <p class="inline-hints">削除する場合はチェックを入れてください</p>
+  <% end %>
+<% end %>
+```
