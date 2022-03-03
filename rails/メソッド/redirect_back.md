@@ -4,5 +4,5 @@
 ### フラッシュメッセージを表示
   
 ```rb
-redirect_back(fallback_location: collection_path, flash: { error: "追加することができませんでした" })
+redirect_back(fallback_location: root_path, flash: { error: "表示するメッセージ" })
 ```
