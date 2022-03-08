@@ -59,3 +59,11 @@ ja:
 ```rb
 <%= paginate @posts, params: { action: "new" } %>
 ```
+  
+<br>
+  
+## 〇〇件 ~ ＸＸ件表示中みたいな表示をする
+(例)ページごとのアイテム一覧の件数を表示
+```rb
+<%= @items.offset_value + 1 %>件〜<%= @items.offset_value + @items.count %>件表示中
+```
