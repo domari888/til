@@ -24,6 +24,11 @@
 ```
 git merge origin/master
 ```
+  
+- コンフリクトが発生した場合に merge を取り消す
+```
+git merge --abort
+```
 
 <br>
 
