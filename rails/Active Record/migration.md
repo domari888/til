@@ -73,3 +73,16 @@ rails db:migrate:down VERSION=`Migration ID`
 ```
 rm -rf db/migrate/`Migration ID`
 ```
+  
+<br>
+  
+## マイグレーションファイル名の変更
+  
+削除したいマイグレーションファイルの`Migration ID`を指定して`down`にする  
+```
+rails db:migrate:down VERSION=`Migration ID`
+```
+ファイル名を変更後、マイグレーションを実行
+```
+rails db:migrate
+```
