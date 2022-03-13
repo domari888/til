@@ -73,7 +73,17 @@ FactoryBot.define do
   end
 end
 ```
-**注意**
+  
+### ファクトリ名とクラス名が異なる場合は`class オプション`を指定する
+```rb
+FactoryBot.define do
+  factory :admin_user, class: User do
+    ~ 処理 ~
+  end
+end
+```
+    
+### 画像ファイルへのパスを指定する
 Factory_bot_rails で画像ファイルへのパスを書くときは
 ```rb
 File.open("#{Rails.root}/public/images/fallback/default.png")
