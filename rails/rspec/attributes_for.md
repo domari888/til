@@ -14,7 +14,7 @@ FactoryBot.define do
     avatar { Rack::Test::UploadedFile.new(Rails.root.join('public/images/fallback/default.png')) }
   end
 ```
-
+ハッシュの値で作成する
 ```rb
 attributes_for(:user)
 
