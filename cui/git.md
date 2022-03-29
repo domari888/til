@@ -94,3 +94,11 @@ git push --delete origin 古いブランチ
 git push origin 新しいブランチ
 ```
 
+## git diff
+### git diff ブランチ名 ブランチ名
+ブランチ同士の差分を比較
+
+(例)`develop`と`feature/hoge`の差分を比較
+```
+git diff develop feature/hoge
+```
