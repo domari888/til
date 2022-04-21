@@ -111,3 +111,7 @@ jqueryを自動的にロードするには、jqueryが公開している両方�
 ```rb
 <%= link_to "表示するリンクのテキスト", リンク先のパス, data: { toggle: "modal", target: "#know-how-modal"} %>
 ```
+`remote: true`を追加することで対応した非同期でデータを取得してモーダルに渡すことができる
+```rb
+<%= link_to "表示するリンクのテキスト", リンク先のパス, data: { toggle: "modal", target: "#know-how-modal"}, remote:true %>
+```
