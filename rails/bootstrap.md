@@ -103,3 +103,11 @@ jqueryを自動的にロードするには、jqueryが公開している両方�
   }
 }
 ```
+  
+<br>
+  
+## モーダル
+### link_to を使用した書き方
+```rb
+<%= link_to "表示するリンクのテキスト", リンク先のパス, data: { toggle: "modal", target: "#know-how-modal"} %>
+```
