@@ -13,3 +13,17 @@ FactoryBot.define do
   end
 end
 ```
+
+<br>
+
+## class オプションを指定する
+(例)`guest_user`というファクトリ名のテストデータを作成
+```rb
+FactoryBot.define do
+  factory :guest_user, class: 'User' do
+    name { 'ゲストユーザー' }
+    email { 'guest@example.com'
+    password { 'password' }
+  end
+end
+```
