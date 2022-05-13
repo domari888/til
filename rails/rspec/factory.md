@@ -27,3 +27,30 @@ FactoryBot.define do
   end
 end
 ```
+  
+<br>
+  
+## テストデータ作成時に同時に関連するモデルの Factory を作成
+  
+(例)Post モデルのテストデータ作成時に User モデルの Factory も同時に作成
+  
+`spec/factories/posts.rb`
+```rb
+FactoryBot.define do
+  factory :post do
+    content { Faker::Lorem.paragraph }
+    user
+  end
+end
+```
+
+`spec/factories/users.rb`
+```rb
+FactoryBot.define do
+  factory :user do
+    name { 'テストユーザー' }
+    email { 'test@example.com' }
+    password { 'password' }
+  end
+end
+```
