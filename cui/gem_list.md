@@ -1,8 +1,14 @@
 # gem list
-インストールされている`gem`を確認する
+グローバルにインストールされている`gem`を確認する
   
 ```
 gem list
+```
+
+ローカルにインストールされている`gem`を確認する
+  
+```
+bundle exec gem list
 ```
   
 ## gem list --local (gem の名称)
