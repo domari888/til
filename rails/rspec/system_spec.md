@@ -61,3 +61,20 @@ attach_file('post[image]', Rails.root.join('spec/fixtures/test.jpg'), make_visib
 }
 ```
 
+<br>
+
+## 現在のページに画像があるか確認する
+$=とすることでその後に続く文字列を含むものを探します。
+  
+参考:
+  
+[[RSpec]画像がアップロードされたかテストする方法(Capybara)](https://qiita.com/_akira19/items/021be2d09cad54dd4986#:~:text=%24%3D%E3%81%A8%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E3%81%9D%E3%81%AE%E5%BE%8C%E3%81%AB%E7%B6%9A%E3%81%8F%E6%96%87%E5%AD%97%E5%88%97%E3%82%92%E5%90%AB%E3%82%80%E3%82%82%E3%81%AE%E3%82%92%E6%8E%A2%E3%81%97%E3%81%BE%E3%81%99%E3%80%82)
+```rb
+expect(page).to have_selector "img[src$=画像のファイル名]"
+```
+  
+(例)`user.avatar`にプロフィール画像が保存されている場合
+  
+```rb
+expect(page).to have_selector "img[src$='#{user.avatar.filename}']"
+```
