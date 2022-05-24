@@ -37,6 +37,8 @@ end
 attach_file('ロケーター', '画像のパス', make_visible: true)
 ```
 参考:
+
+[How to test file attachment on hidden input using capybara?](https://stackoverflow.com/questions/38049020/how-to-test-file-attachment-on-hidden-input-using-capybara#:~:text=attach_file(%27file%5Bpicture%5D%27%2C%20%27path/to/file.png%27%2C%20make_visible%3A%20true))
   
 [Find hidden element in capybara - cucumber - Stack Overflow](https://stackoverflow.com/questions/43908750/find-hidden-element-in-capybara#:~:text=attach_file(%27some_name%27%2C%20file_path%2C%20make_visible%3A%20true))
   
