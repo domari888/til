@@ -23,6 +23,25 @@
 
 <br>
 
+## namespace 属性
+`namespase: '名称'`で指定した名称を、コンパイル後生成された HTML の id 属性の先頭に追加される
+(例)namespase属性で`edit`を指定
+【erb】
+```rb
+<%= form_with model: @post, namespace: 'edit', local: false do |form| %>
+  <%= form.label :content %>
+  <%= form.text_area :content %>
+<% end %>
+```
+【生成された html】
+```html
+<label for='edit_post_content'>
+  <input id='edit_post_content'>
+</label>
+```
+
+<br>
+  
 ## fidden_field
 非表示のフォームを作成して、値を隠して渡す
   
