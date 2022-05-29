@@ -80,3 +80,11 @@ expect(page).to have_selector "img[src$=画像のファイル名]"
 ```rb
 expect(page).to have_selector "img[src$='#{user.avatar.filename}']"
 ```
+  
+<br>
+  
+## ページにアクセスする
+```rb
+visit アクセスしたいページへのパス
+```
+`visit`でアクセスすると`page`変数に格納される`Capybara::Session`オブジェクトが更新される。
