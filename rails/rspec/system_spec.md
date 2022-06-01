@@ -88,3 +88,16 @@ expect(page).to have_selector "img[src$='#{user.avatar.filename}']"
 visit アクセスしたいページへのパス
 ```
 `visit`でアクセスすると`page`変数に格納される`Capybara::Session`オブジェクトが更新される。
+
+<br>
+
+## 処理の完了を待つ
+capybara が処理を待つ時間を設定する(デフォルトでは処理を２秒待つ)
+(例)待機時間を`10秒`に設定する
+```rb
+it '処理の完了を待つ'
+  using_wait_time(10) do
+    # 実行するテスト内容
+  end
+end
+```
