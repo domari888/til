@@ -54,3 +54,35 @@ FactoryBot.define do
   end
 end
 ```
+
+<br>
+
+## 全ての`sequence`(シーケンス)を振り出しに戻す
+sequence を使用して付与した連番を振り出しに戻す(デフォルトでは1に戻る)
+  
+```rb
+FactoryBot.rewind_sequences
+```
+(例)連番付与したタグを振り出しに戻す
+```rb
+FactoryBot.define do
+  factory :tag do
+    sequence(:name) { |n| "タグ#{n}" }
+  end
+end
+```
+```
+create(:tag)
+create(:tag)
+create(:tag)
+
+Tag.pluck(:name)
+#=> ["タグ1", "タグ2", "タグ3"]
+
+FactoryBot.rewind_sequences
+
+create(:tag)
+Tag.pluck(:name)
+#=> ["タグ１"]
+```
+
