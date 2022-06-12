@@ -6,3 +6,12 @@
 ```rb
 item = double('item')
 ```
+  
+### 検証機能付きテストダブル
+モデルのインスタンスと同じように振る舞う
+  
+`instance_double`とすることでスタブ化するメソッドが存在するか検証する
+(例)`Item`モデルのインスタンスのように振る舞う
+```rb
+item = instance_double('Item', name: 'アイテム名')
+```
