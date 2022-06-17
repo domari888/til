@@ -149,3 +149,13 @@ end
 ```
 create(:user, :adult)
 ```
+  
+<br>
+  
+## ダミーデータ作成
+### 画像
+参考: [Faker::Avatar](https://github.com/faker-ruby/faker/blob/master/doc/default/avatar.md)
+```rb
+Faker::Avatar.image
+#=> "https://robohash.org/sitsequiquia.png?size=300x300&set=set1"
+```
