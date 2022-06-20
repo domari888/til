@@ -60,3 +60,37 @@ def user_params
   params.require(:user).permit(:remove_avatar)
 end
 ```
+  
+<br>
+
+## インターネット上にある場所からURLを介してファイルをアップロードする
+`remote_カラム名_url`とすることで外部API などを使って取得した画像URLを保存するときなどにも`Uploader`を使って画像保存することができる
+  
+参考:  
+[CarrierWave - GitHub](https://github.com/carrierwaveuploader/carrierwave#uploading-files-from-a-remote-location)  
+[URLからCarrierWaveに保存](https://qiita.com/joaoki0412/items/64cb44592923bde2e8ff#-url%E3%81%8B%E3%82%89carrierwave%E3%81%AB%E4%BF%9D%E5%AD%98)  
+[carrierwaveuploader/carrierwave](https://github.com/carrierwaveuploader/carrierwave/blob/229594fb2ac7cfa59586162c0b3fc3d0b5bab978/lib/carrierwave/mount.rb#L161)
+  
+```erb
+<%= form_with model: item, local: true do |f| %>
+  <%= f.text_field :remote_image_url %>
+<% end %>
+```
+```rb
+class ItemsController < ApplicationController
+  def create
+    @item = current_user.items.build(item_params)
+    if @item.save
+      redirect_to user_items_path, notice: "アイテムを追加しました"
+    else
+      redirect_to user_items_path, alert: 'アイテムを追加することができませんでした'
+    end
+  end
+  
+  private
+  
+  def item_params
+    params.require(:item).permit(:name, :genre, :remote_image_url)
+  end
+end
+```
