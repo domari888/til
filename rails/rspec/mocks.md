@@ -15,3 +15,12 @@ item = double('item')
 ```rb
 item = instance_double('Item', name: 'アイテム名')
 ```
+
+<br>
+
+## スタブ
+ダミーメソッドを作成。  
+`item.name`を呼ぶと`"アイテム名"`と返す
+```rb
+item.stub(:name) { "アイテム名" }
+```
