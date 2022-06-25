@@ -102,3 +102,22 @@ it '処理の完了を待つ'
   end
 end
 ```
+
+<br>
+
+## アラートを操作する
+**受け入れる場合**
+  
+参考 : [#accept_confirm(text = nil, **options, &blk) ⇒ String](https://www.rubydoc.info/github/jnicklas/capybara/Capybara/Session#:~:text=%23accept_confirm(text%20%3D%20nil%2C%20**options%2C%20%26blk)%20%E2%87%92%20String)
+  
+```rb
+page.accept_confirm
+```
+  
+**受け入れない場合**
+  
+参考 : [#dismiss_confirm(text = nil, **options, &blk) ⇒ String](https://www.rubydoc.info/github/jnicklas/capybara/Capybara/Session#:~:text=%23dismiss_confirm(text%20%3D%20nil%2C%20**options%2C%20%26blk)%20%E2%87%92%20String)
+  
+```rb
+page.dismiss_confirm
+```
