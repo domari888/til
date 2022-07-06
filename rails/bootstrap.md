@@ -115,3 +115,33 @@ jqueryを自動的にロードするには、jqueryが公開している両方�
 ```rb
 <%= link_to "表示するリンクのテキスト", リンク先のパス, data: { toggle: "modal", target: "#know-how-modal"}, remote:true %>
 ```
+  
+<br>
+  
+## カラーユーティリティに新しい色を追加
+`bootstrap.scss`の`$theme-colors`に追加することで新しい色を追加することができる
+  
+【bootstrap.scss】
+```scss
+$theme-colors: (
+  "dark-gray": #808080;,
+  "light-gray": #F3F3F3;
+);
+```
+ビューで下記のように使用できるようになる
+```erb
+<p class="text-light-gray">.text-light-gray</p>
+```
+  
+### Bootstrap の CSS を Sprockets で扱っている場合
+`@import "bootstrap/scss/bootstrap";`より前に読み込むことで追加(もしくは上書き)することができる
+  
+【application.scss】
+```scss
+$theme-colors: (
+  "dark-gray": #808080;,
+  "light-gray": #F3F3F3;
+);
+
+@import "bootstrap/scss/bootstrap";
+```
