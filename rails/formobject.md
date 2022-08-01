@@ -143,4 +143,23 @@ class PostForm
 ```
   
 `post_form.rb` で `delegate :persisted?, to: :post` と `def to_model post end` を定義することでコントローラのない `@post_form` でも自動的に`POST`か`PATCH`か振り分けてくれる
-
+  
+<br>
+  
+## 日本語化
+フォームオブジェクトでは`ActiveModel::Model`をインクルードしているため`activerecord:`配下に書いても日本語が反映されない。
+```rb
+class PostForm
+  include ActiveModel::Model
+end
+```
+```yml
+ja:
+  activemodel:
+    attributes:
+      post_form:
+        content: キャプション
+        images: 画像
+        tag_ids: タグ
+        category_ids: カテゴリ
+```
