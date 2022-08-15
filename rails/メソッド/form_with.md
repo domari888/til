@@ -96,8 +96,18 @@
   
 <br>
   
-### required: true
+### required: true を設定する
 [Required Field on collection_select type field - Stack Overflow](https://stackoverflow.com/questions/35726763/required-field-on-collection-select-type-field#:~:text=As%20per%20the%20syntax%20options%20and%20html_options%20are%20hashes%2C%20so%20you%20need%20to%20enclose%20them%20in%20braces.)
 ```rb
 <%= form.collection_select :user_id, User.order(name: :asc), :id, :name, { include_blank: '選択してください' }, { required: true } %>
+```
+  
+<br>
+
+## form.submit
+[Rails ドキュメント](https://railsdoc.com/page/submit)
+  
+ボタンを押下した際にボタンを無効化して`disable_with:`で指定した文字列を表示する。
+```rb
+f.submit :button, data: { disable_with: "送信する" }
 ```
