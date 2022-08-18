@@ -1,4 +1,13 @@
 ## メイラー
+参考 :  
+[Rails6のActionMailer機能をRSpecでテストする方法 - Qiita](https://qiita.com/hiroki_tanaka/items/f8c7759682539d7330cd#rspec)
+  
+[Mailer specs - RSpec Rails - Relish](https://relishapp.com/rspec/rspec-rails/docs/mailer-specs)
+  
+[【Rails】Action Mailerチュートリアル](https://sakaishun.com/2021/03/17/action-mailer-tutorial/)
+  
+<br>
+  
 `type: :mailer`とすることでメイラーのメソッドを使用できるようになる
 ```rb
 RSpec.describe 'お問い合わせ機能', type: :mailer do
@@ -34,6 +43,9 @@ class ApplicationMailer < ActionMailer::Base
 end
 ```
 【app/mailers/contact_mailer.rb】
+  
+参考 : [Rails ガイド](https://railsguides.jp/action_mailer_basics.html#%E3%83%A1%E3%82%A4%E3%83%A9%E3%83%BC%E3%81%AE%E3%83%93%E3%83%A5%E3%83%BC)
+  
 ```rb
 class ContactMailer < ApplicationMailer
   def user_email(contact)
