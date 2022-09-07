@@ -103,3 +103,20 @@ class ItemsController < ApplicationController
   end
 end
 ```
+  
+<br>
+  
+## RSpec でテスト用画像を設定する
+テスト用画像は`spec/fixtures`配下に追加する
+(例)`spec/fixtures/test.jpg`　の画像をテストで使用する
+```rb
+Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/test.jpg'))
+```
+(例)　Factory で Item モデルの image に画像を追加する
+```rb
+FactoryBot.define do
+  factory :item do
+    image { Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/test.jpg')) }
+  end
+end
+```
