@@ -167,3 +167,38 @@ end
   <% end %>
 <% end %>
 ```
+
+<br>
+
+## フォームをパーシャルで分割して作成する
+`form partial: '○○○'`とすることで指定したテンプレートファイルを返す。
+
+(例)`app/views/admin/users/_form.html.arb`(テンプレートファイル)を返す
+```rb
+# app/admin/users.rb
+
+ActiveAdmin.register User do
+  form partial: 'form'
+end
+```
+(例)`form_with`を使用したテンプレートファイル
+```rb
+# app/views/admin/users/_form.html.arb
+
+<%= form_with model: [:admin, resource], local: true do |form| %>
+  <fieldset class="inputs">
+    <ol>
+      <li>
+        <%= form.label :email %>
+        <%= form.email_field :email, required: true %>
+      </li>
+    </ol>
+  </fieldset>
+<% end %>
+```
+  
+参考文庫 :
+  
+[Customizing the Form - Active Admin](https://activeadmin.info/5-forms.html#:~:text=Cancel%27%20buttons%0Aend-,Partials,%7C%0A%20%20%20%20%20%20%2D%20t.input%20%3Atag%0A%20%20%20%20%3D%20f.actions,-Nested%20Resources)
+  
+[ActiveAdminでモデルの管理画面を.erbでカスタマイズして作る](https://qiita.com/roba4coding/items/c27d3635c152b3a868f3#%E6%96%B0%E8%A6%8F%E7%B7%A8%E9%9B%86%E7%94%BB%E9%9D%A2%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E7%94%BB%E9%9D%A2)
