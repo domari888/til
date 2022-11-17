@@ -229,3 +229,5 @@ show do
   default_main_content
 end
 ```
+参考文庫 :
+[Customize the Show Page - Active Admin](https://activeadmin.info/6-show-pages.html#:~:text=If%20you%20want%20to,charts%27%0A%20%20end%0A%20%20default_main_content%0Aend)
