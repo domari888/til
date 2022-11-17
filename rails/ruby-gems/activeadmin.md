@@ -202,3 +202,30 @@ end
 [Customizing the Form - Active Admin](https://activeadmin.info/5-forms.html#:~:text=Cancel%27%20buttons%0Aend-,Partials,%7C%0A%20%20%20%20%20%20%2D%20t.input%20%3Atag%0A%20%20%20%20%3D%20f.actions,-Nested%20Resources)
   
 [ActiveAdminでモデルの管理画面を.erbでカスタマイズして作る](https://qiita.com/roba4coding/items/c27d3635c152b3a868f3#%E6%96%B0%E8%A6%8F%E7%B7%A8%E9%9B%86%E7%94%BB%E9%9D%A2%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E7%94%BB%E9%9D%A2)
+
+<br>
+
+## 一覧ページ(index)でソート順を定義する
+(例)`id`を昇順で表示する
+```rb
+ActiveAdmin.register Post do
+  config.sort_order = 'id_asc'
+end
+```
+参考文庫 :
+[Customizing the Index Page - Active Admin](https://activeadmin.info/3-index-pages.html#:~:text=Index%20default%20sort%20order)
+
+<br>
+
+## デフォルトの詳細ページ(show)データを表示する
+`default_main_content`を記述することでデフォルトのデータを表示する
+  
+(例)デフォルトのデータの他に文字列を追加
+```rb
+show do
+  div do
+    '追加する文字列を表示'
+  end
+  default_main_content
+end
+```
