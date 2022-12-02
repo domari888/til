@@ -1,5 +1,7 @@
 # push
-要素を末尾に追加する
+要素を配列の末尾に追加する
+  
+参考: [Array#append (Ruby 3.1 リファレンスマニュアル)](https://docs.ruby-lang.org/ja/latest/method/Array/i/append.html)
 
 ```rb
 配列.push(要素)
