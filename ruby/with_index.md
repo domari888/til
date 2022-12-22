@@ -5,6 +5,15 @@
 ```rb
 languages = ['Ruby', 'PHP', 'Python']
 
-languages.map.with_index { |language, i| puts "#{i}: #{language}" }
+languages.map.with_index { |language, i| "#{i}: #{language}" }
 #=> ["0: Ruby", "1: PHP", "2: Python"]
+```
+
+### 開始するインデックスの値を指定する
+(例)インデックスが`１`から開始するように指定する
+```rb
+languages = ['Ruby', 'PHP', 'Python']
+
+languages.map.with_index(1) { |language, i| "#{i}: #{language}" }
+#=> ["1: Ruby", "2: PHP", "3: Python"]
 ```
